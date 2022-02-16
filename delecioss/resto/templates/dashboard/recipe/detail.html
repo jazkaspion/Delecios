@@ -1,0 +1,52 @@
+{%  extends 'dashboard/base.html' %}
+{% block title %}Recipes detail{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="card-content table-responsive table-full-width">
+<table class="table table-hover">
+    <thead>
+       <th>Key</th>
+            <th>Value</th>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <th>{{one.id}}</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <th>{{one.name}}</th>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <th>{% include 'site/_partials/rating.html' %}</th>
+
+            </tr>
+            <tr>
+                <td>Prep</td>
+                <th>{{ one.prep }}</th>
+            </tr>
+            <tr>
+                <td>Yields</td>
+                <td>{{ one.yields }}</td>
+
+            </tr>
+            <tr>
+                <td>Cook</td>
+                <td>{{ one.cook }}</td>
+            </tr>
+            <tr>
+                <td>Steps</td>
+                <td>{{ one.steps }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Categories forms{% endblock %}
+{% load static %}
+{% block content %}
+
+<form id="allInputsFormValidation" class="form-horizontal" method="post" novalidate="">
+    {% csrf_token %}
+    {{ forms.as_p }}
+
+    <div class="card-footer ">
+        <button class="btn btn-info">Save</button>
+    </div>
+</form>
+
+{% endblock %}
+
+
+
+
+

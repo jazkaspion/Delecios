@@ -1,0 +1,57 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Categories list{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="card-header">
+    <h4 class="card-title">Categories list</h4>
+</div>
+<div class="card-content table-responsive table-full-width">
+    <table class="table">
+        <thead>
+            <th>№</th>
+            <th>Slug</th>
+            <th>Content</th>
+
+        </thead>
+        <tbody>
+            {% for i in all %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.slug }}</td>
+                <td>{{ i.content }}</td>
+
+                <td class="td-actions text-right">
+                    <a href="{% url 'cat_one' pk=i.id %}" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                        <i class="ti-user"></i>
+                    </a>
+                    <a href="{% url 'cat_edit' pk=i.id %}" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                        <i class="ti-pencil-alt"></i>
+                    </a>
+                    <a href="{% url 'cat_del' pk=i.id %}" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                        <i class="ti-close"></i>
+                    </a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'cat_add' %}"><button class="btn btn-info btn-fill btn-wd">Categoriya qo`shish</button></a>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
